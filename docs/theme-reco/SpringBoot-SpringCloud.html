@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SpringBoot&amp;SpringCloud面经 | zstblog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon1.ico">
+    <meta name="description" content="技术分享">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.e853742c.css" as="style"><link rel="preload" href="/assets/js/app.9553e677.js" as="script"><link rel="preload" href="/assets/js/3.979a681a.js" as="script"><link rel="preload" href="/assets/js/1.9975a5e7.js" as="script"><link rel="preload" href="/assets/js/8.412f9bc6.js" as="script"><link rel="prefetch" href="/assets/js/10.1e8468c9.js"><link rel="prefetch" href="/assets/js/11.7729bf5a.js"><link rel="prefetch" href="/assets/js/12.9557c0e3.js"><link rel="prefetch" href="/assets/js/13.5397dffc.js"><link rel="prefetch" href="/assets/js/14.d91a7549.js"><link rel="prefetch" href="/assets/js/15.12c66841.js"><link rel="prefetch" href="/assets/js/16.97c16572.js"><link rel="prefetch" href="/assets/js/17.bc6f6acd.js"><link rel="prefetch" href="/assets/js/18.a17ecee2.js"><link rel="prefetch" href="/assets/js/19.8f631be8.js"><link rel="prefetch" href="/assets/js/20.e493abb8.js"><link rel="prefetch" href="/assets/js/21.5189a833.js"><link rel="prefetch" href="/assets/js/22.6c980202.js"><link rel="prefetch" href="/assets/js/23.0a8ddf3a.js"><link rel="prefetch" href="/assets/js/24.a36362ba.js"><link rel="prefetch" href="/assets/js/25.9c8b53e2.js"><link rel="prefetch" href="/assets/js/26.69c456d6.js"><link rel="prefetch" href="/assets/js/27.e2bbe101.js"><link rel="prefetch" href="/assets/js/28.1e8db581.js"><link rel="prefetch" href="/assets/js/29.7f55762b.js"><link rel="prefetch" href="/assets/js/30.2a156191.js"><link rel="prefetch" href="/assets/js/31.8b7de805.js"><link rel="prefetch" href="/assets/js/32.b3f5d029.js"><link rel="prefetch" href="/assets/js/33.08ea4771.js"><link rel="prefetch" href="/assets/js/34.061543c8.js"><link rel="prefetch" href="/assets/js/35.5d582650.js"><link rel="prefetch" href="/assets/js/36.033b520c.js"><link rel="prefetch" href="/assets/js/37.d2585658.js"><link rel="prefetch" href="/assets/js/38.075aa62d.js"><link rel="prefetch" href="/assets/js/39.ccfbc284.js"><link rel="prefetch" href="/assets/js/4.705d9b2d.js"><link rel="prefetch" href="/assets/js/40.f60e24ed.js"><link rel="prefetch" href="/assets/js/41.7629259b.js"><link rel="prefetch" href="/assets/js/42.ad66b4b5.js"><link rel="prefetch" href="/assets/js/43.9a95bcbb.js"><link rel="prefetch" href="/assets/js/44.44e2e197.js"><link rel="prefetch" href="/assets/js/45.5687f71b.js"><link rel="prefetch" href="/assets/js/46.7312795e.js"><link rel="prefetch" href="/assets/js/5.0b489da2.js"><link rel="prefetch" href="/assets/js/6.bce4681f.js"><link rel="prefetch" href="/assets/js/7.3309610d.js"><link rel="prefetch" href="/assets/js/9.25944bc3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e853742c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>zstblog</h3> <p class="description" data-v-59e6cb88>技术分享</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>zstaoer</span>
+          
+        <!---->
+        2023
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="zstblog" class="logo"> <span class="site-name">zstblog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/MySql/" class="nav-link"><i class="undefined"></i>
+  MySql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Article/" class="nav-link"><i class="undefined"></i>
+  Article
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MybatisPlus/" class="nav-link"><i class="undefined"></i>
+  MybatisPlus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/EasyExcel/" class="nav-link"><i class="undefined"></i>
+  EasyExcel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/springboot/" class="nav-link"><i class="undefined"></i>
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面经/" class="nav-link"><i class="undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      vue3
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/article/v3/20230911.html" class="nav-link"><i class="undefined"></i>
+  常用指令
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/v3/202309111620.html" class="nav-link"><i class="undefined"></i>
+  计算属性 &amp; 侦听器 &amp; 样式绑定 &amp; 模板引用
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/v3/202309111638.html" class="nav-link"><i class="undefined"></i>
+  Vue3 基础 – Vite &amp; 组件基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JavaScript
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230912-Map.html" class="nav-link"><i class="undefined"></i>
+  Map
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230912-Set.html" class="nav-link"><i class="undefined"></i>
+  Set
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-List.html" class="nav-link"><i class="undefined"></i>
+  List
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-bool.html" class="nav-link"><i class="undefined"></i>
+  布尔
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-num.html" class="nav-link"><i class="undefined"></i>
+  数字类型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-string.html" class="nav-link"><i class="undefined"></i>
+  字符串
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link router-link-active"><i class="undefined"></i>
+  java面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/redis.html" class="nav-link"><i class="undefined"></i>
+  Redis面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/mq.html" class="nav-link"><i class="undefined"></i>
+  MQ面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/SpringBoot-SpringCloud.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  SpringBoot&amp;SpringCloud面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/ssm.html" class="nav-link"><i class="undefined"></i>
+  ssm面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/mysql.html" class="nav-link"><i class="undefined"></i>
+  MySql面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/Transactional.html" class="nav-link"><i class="undefined"></i>
+  事务控制
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/avatar1.jpg" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    zstaoer
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>35</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>26</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/MySql/" class="nav-link"><i class="undefined"></i>
+  MySql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Article/" class="nav-link"><i class="undefined"></i>
+  Article
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MybatisPlus/" class="nav-link"><i class="undefined"></i>
+  MybatisPlus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/EasyExcel/" class="nav-link"><i class="undefined"></i>
+  EasyExcel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/springboot/" class="nav-link"><i class="undefined"></i>
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面经/" class="nav-link"><i class="undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      vue3
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/article/v3/20230911.html" class="nav-link"><i class="undefined"></i>
+  常用指令
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/v3/202309111620.html" class="nav-link"><i class="undefined"></i>
+  计算属性 &amp; 侦听器 &amp; 样式绑定 &amp; 模板引用
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/v3/202309111638.html" class="nav-link"><i class="undefined"></i>
+  Vue3 基础 – Vite &amp; 组件基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JavaScript
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230912-Map.html" class="nav-link"><i class="undefined"></i>
+  Map
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230912-Set.html" class="nav-link"><i class="undefined"></i>
+  Set
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-List.html" class="nav-link"><i class="undefined"></i>
+  List
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-bool.html" class="nav-link"><i class="undefined"></i>
+  布尔
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-num.html" class="nav-link"><i class="undefined"></i>
+  数字类型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-string.html" class="nav-link"><i class="undefined"></i>
+  字符串
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link router-link-active"><i class="undefined"></i>
+  java面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/redis.html" class="nav-link"><i class="undefined"></i>
+  Redis面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/mq.html" class="nav-link"><i class="undefined"></i>
+  MQ面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/SpringBoot-SpringCloud.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  SpringBoot&amp;SpringCloud面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/ssm.html" class="nav-link"><i class="undefined"></i>
+  ssm面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/mysql.html" class="nav-link"><i class="undefined"></i>
+  MySql面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/Transactional.html" class="nav-link"><i class="undefined"></i>
+  事务控制
+</a></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><a href="/docs/theme-reco/" aria-current="page" class="sidebar-link">javaSE面经</a></li><li><a href="/docs/theme-reco/ssm.html" class="sidebar-link">ssm面经</a></li><li><a href="/docs/theme-reco/SpringBoot-SpringCloud.html" aria-current="page" class="active sidebar-link">SpringBoot&amp;SpringCloud面经</a></li><li><a href="/docs/theme-reco/mq.html" class="sidebar-link">MQ面经</a></li><li><a href="/docs/theme-reco/mysql.html" class="sidebar-link">MySql面经</a></li><li><a href="/docs/theme-reco/Transactional.html" class="sidebar-link">事务控制</a></li><li><a href="/docs/theme-reco/redis.html" class="sidebar-link">redis面经</a></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>SpringBoot&amp;SpringCloud面经</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>zstaoer</span>
+          
+        <!---->
+        2023
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">SpringBoot&amp;SpringCloud面经</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>zstaoer</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>4/2/2023</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>SpringBoot&amp;SpringCloud</span></i></div></div> <div class="theme-reco-content content__default"><div class="custom-block tip"><p class="title"></p><p>SpringBoot&amp;SpringCloud面经分享</p></div> <h2 id="_01-讲一讲springboot自动装配的原理"><a href="#_01-讲一讲springboot自动装配的原理" class="header-anchor">#</a> 01- 讲一讲SpringBoot自动装配的原理</h2> <p>1.在SpringBoot项目的启动引导类上都有一个注解<code>@SpringBootApplication</code></p> <p><img src="/assets/img/image-20220520084122601.ca398174.png" alt="image-20220520084122601"></p> <p>这个注解是一个复合注解, 其中有三个注解构成 , 分别是</p> <p><img src="/assets/img/image-20220520084321250.dad146b5.png" alt="image-20220520084321250"></p> <ul><li>@SpringBootConfiguration : 是@Configuration的派生注解 , 标注当前类是一个SpringBoot的配置类</li> <li>@ComponentScan : 开启组件扫描, 默认扫描的是当前启动引导了所在包以及子包</li> <li><strong>@EnableAutoConfiguration : 开启自动配置(自动配置核心注解)</strong></li></ul> <p>2.在@EnableAutoConfiguration注解的内容使用@Import注解导入了一个<code>AutoConfigurationImportSelector.class</code>的类</p> <p><img src="/assets/img/image-20220520084634232.13bee98c.png" alt="image-20220520084634232"></p> <p>在<code>AutoConfigurationImportSelector.class</code>中的<code>selectImports</code>方法内通过一系列的方法调用, 最终需要加载类加载路径下<code>META-INF</code>下面的<code>spring.factories</code>配置文件</p> <p>3.在<code>META-INF/spring.factories</code>配置文件中, 定义了很多的自动配置类的完全限定路径</p> <p><img src="/assets/img/image-20220520085239202.4139fec1.png" alt="image-20220520085239202"></p> <p>这些配置类都会被加载</p> <p>4.加载配置类之后, 会配置类或者配置方法上的@ConditionalOnXxxx条件化注解是否满足条件</p> <p><img src="/assets/img/image-20220520085423798.6b7638f3.png" alt="image-20220520085423798"></p> <p>如果满足条件就会从属性配置类中读取相关配置 , 执行配置类中的配置方法 , 完成自动配置</p> <h2 id="_02-讲一讲springboot启动流程"><a href="#_02-讲一讲springboot启动流程" class="header-anchor">#</a> 02- 讲一讲SpringBoot启动流程</h2> <p>springboot项目在启动的时候, 首先会执行启动引导类里面的<code>SpringApplication.run(AdminApplication.class, args)</code>方法</p> <p><img src="/assets/img/image-20220520091013851.53a0a4bf.png" alt="image-20220520091013851"></p> <p>这个run方法主要做的事情可以分为三个部分 :</p> <p>第一部分进行SpringApplication的初始化模块，配置一些基本的环境变量、资源、构造器、监听器</p> <p>第二部分实现了应用具体的启动方案，包括启动流程的监听模块、加载配置环境模块、及核心的创建上下文环境模块</p> <p>第三部分是自动化配置模块，该模块作为springboot自动配置核心，在后面的分析中会详细讨论</p> <h2 id="_03-你们常用的springboot起步依赖有哪些"><a href="#_03-你们常用的springboot起步依赖有哪些" class="header-anchor">#</a> 03- 你们常用的SpringBoot起步依赖有哪些</h2> <p><img src="/assets/img/image-20220519113947384-16529320449641.88ddf6ba.png" alt="image-20220519113947384"></p> <h2 id="_04-springboot支持的配置文件有哪些-加载顺序是什么样的"><a href="#_04-springboot支持的配置文件有哪些-加载顺序是什么样的" class="header-anchor">#</a> 04- springBoot支持的配置文件有哪些 ? 加载顺序是什么样的</h2> <p>1 properties文件
+2 YAML文件
+3 系统环境变量
+4 命令行参数</p> <p>如果有相同的配置参数, 后加载的会覆盖先加载的</p> <h2 id="_05-运行一个springboot项目有哪些方式"><a href="#_05-运行一个springboot项目有哪些方式" class="header-anchor">#</a> 05- 运行一个SpringBoot项目有哪些方式</h2> <ol><li><p>直接使用jar -jar 运行</p></li> <li><p>开发过程中运行main方法</p></li> <li><p>可以配置插件 , 将springboot项目打war包, 部署到Tomcat中运行</p></li> <li><p>直接用maven插件运行 maven spring-boot：run</p></li></ol> <h2 id="_07-spring-boot的核心注解是哪个-他由哪几个注解组成的"><a href="#_07-spring-boot的核心注解是哪个-他由哪几个注解组成的" class="header-anchor">#</a> 07-Spring Boot的核心注解是哪个？他由哪几个注解组成的？</h2> <p>Spring Boot的核心注解是@SpringBootApplication , 他由几个注解组成 :</p> <ul><li>@SpringBootConfiguration： 组合了- @Configuration注解，实现配置文件的功能；</li> <li>@EnableAutoConfiguration：打开自动配置的功能，也可以关闭某个自动配置的选项</li> <li>@ComponentScan：Spring组件扫描</li></ul> <h2 id="_08-spring-boot-中如何解决跨域问题"><a href="#_08-spring-boot-中如何解决跨域问题" class="header-anchor">#</a> 08-Spring Boot 中如何解决跨域问题 ?</h2> <p>SpringMVC项目中使用@CrossOrigin注解来解决跨域问题 , 本质是CORS</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/hello&quot;</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@CrossOrigin</span><span class="token punctuation">(</span>origins <span class="token operator">=</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span>
+<span class="token comment">//@CrossOrigin(value = &quot;http://localhost:8081&quot;) //指定具体ip允许跨域</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;hello world&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>SpringBoot项目采用自动配置的方式来配置CORS , 可以通过实现 WebMvcConfigurer接口然后重写addCorsMappings方法解决跨域问题。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CorsConfig</span> <span class="token keyword">implements</span> <span class="token class-name">WebMvcConfigurer</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addCorsMappings</span><span class="token punctuation">(</span><span class="token class-name">CorsRegistry</span> registry<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        registry<span class="token punctuation">.</span><span class="token function">addMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/**&quot;</span><span class="token punctuation">)</span>
+                <span class="token comment">//是否发送Cookie</span>
+                <span class="token punctuation">.</span><span class="token function">allowCredentials</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+                <span class="token comment">//放行哪些原始域</span>
+                <span class="token punctuation">.</span><span class="token function">allowedOrigins</span><span class="token punctuation">(</span><span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">allowedMethods</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;POST&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;PUT&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;DELETE&quot;</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">allowedHeaders</span><span class="token punctuation">(</span><span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">exposedHeaders</span><span class="token punctuation">(</span><span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>在SpringCloud项目中一般都会有网关 , 在网关中可以配置CORS跨域, 这样所有通过网关的请求都解决了跨域问题</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">gateway</span><span class="token punctuation">:</span>
+      <span class="token key atrule">globalcors</span><span class="token punctuation">:</span>
+        <span class="token key atrule">cors-configurations</span><span class="token punctuation">:</span>
+          <span class="token key atrule">'[/**]'</span><span class="token punctuation">:</span> <span class="token comment"># 匹配所有请求</span>
+            <span class="token key atrule">allowedOrigins</span><span class="token punctuation">:</span> <span class="token string">&quot;*&quot;</span> <span class="token comment">#跨域处理 允许所有的域</span>
+            <span class="token key atrule">allowedMethods</span><span class="token punctuation">:</span> <span class="token comment"># 支持的方法</span>
+              <span class="token punctuation">-</span> GET
+              <span class="token punctuation">-</span> POST
+              <span class="token punctuation">-</span> PUT
+              <span class="token punctuation">-</span> DELETE
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="_09-你们项目中使用的springboot是哪个版本"><a href="#_09-你们项目中使用的springboot是哪个版本" class="header-anchor">#</a> 09- 你们项目中使用的SpringBoot是哪个版本 ?</h2> <ul><li><p>SpringBoot : 2.3.4.RELEASE</p></li> <li><p>SpringCloud : Hoxton.SR10</p></li> <li><p>SpringCloudAlibaba : 2.2.5.RELEASE</p></li></ul> <h2 id="_10-spring-cloud-5大组件有哪些"><a href="#_10-spring-cloud-5大组件有哪些" class="header-anchor">#</a> 10- Spring Cloud 5大组件有哪些？</h2> <p>早期我们一般认为的Spring Cloud五大组件是</p> <ul><li>Eureka   : 注册中心</li> <li>Ribbon  : 负载均衡</li> <li>Feign     : 远程调用</li> <li>Hystrix :  服务熔断</li> <li>Zuul/Gateway  : 网关</li></ul> <p>随着SpringCloudAlibba在国内兴起 , 我们项目中使用了一些阿里巴巴的组件</p> <ul><li><p>注册中心/配置中心 Nacos</p></li> <li><p>负载均衡 Ribbon</p></li> <li><p>服务调用 Feign</p></li> <li><p>服务保护 sentinel</p></li> <li><p>服务网关 Gateway</p></li></ul> <h2 id="_11-什么是微服务-微服务的优缺点是什么"><a href="#_11-什么是微服务-微服务的优缺点是什么" class="header-anchor">#</a> 11- 什么是微服务?微服务的优缺点是什么?</h2> <p>微服务就是一个独立的职责单一的服务应用程序，一个模块</p> <p>1．优点：松耦合，聚焦单一业务功能，无关开发语言，团队规模降低 , 扩展性好, 天然支持分库
+2．缺点：随着服务数量增加，管理复杂，部署复杂，服务器需要增多，服务通信和调用压力增大</p> <h2 id="_12-你们项目中微服务之间是如何通讯的"><a href="#_12-你们项目中微服务之间是如何通讯的" class="header-anchor">#</a> 12- 你们项目中微服务之间是如何通讯的?</h2> <p>1．同步通信：通过Feign发送http请求调用</p> <p>2．异步：消息队列，如RabbitMq、KafKa等</p> <h2 id="_13-服务注册和发现是什么意思-spring-cloud-如何实现服务注册发现"><a href="#_13-服务注册和发现是什么意思-spring-cloud-如何实现服务注册发现" class="header-anchor">#</a> 13- 服务注册和发现是什么意思？Spring Cloud 如何实现服务注册发现？</h2> <p>各种注册中心组件的原理和流程其实大体上类似</p> <p><img src="/assets/img/image-20220520105342636.ecafa4e0.png" alt="image-20220520105342636"></p> <p>核心的功能就一下几个 :</p> <ol><li>服务注册 : 服务启动的时候会将服务的信息注册到注册中心, 比如: 服务名称 , 服务的IP , 端口号等</li> <li>服务发现 : 服务调用方调用服务的时候, 根据服务名称从注册中心拉取服务列表 , 然后根据负载均衡策略 , 选择一个服务, 获取服务的IP和端口号, 发起远程调用</li> <li>服务状态监控 : 服务提供者会定时向注册中心发送心跳 , 注册中心也会主动向服务提供者发送心跳探测, 如果长时间没有接收到心跳, 就将服务实例从注册中心下线或者移除</li></ol> <p>使用的话, 首先需要部署注册中心服务 , 然后在我们自己的微服务中引入注册中心依赖, 然后再配置文件中配置注册中心地址 就可以了</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> leadnews<span class="token punctuation">-</span>admin
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+      <span class="token comment"># 注册中心地址</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> 124.221.75.8<span class="token punctuation">:</span><span class="token number">8848</span>
+      <span class="token comment"># 配置中心地址</span>
+      <span class="token key atrule">config</span><span class="token punctuation">:</span>
+        <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> 124.221.75.8<span class="token punctuation">:</span><span class="token number">8848</span>
+        <span class="token key atrule">file-extension</span><span class="token punctuation">:</span> yml
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="_14-你们项目中使用的注册中心是什么-有没有了解过原理"><a href="#_14-你们项目中使用的注册中心是什么-有没有了解过原理" class="header-anchor">#</a> 14- 你们项目中使用的注册中心是什么 ? 有没有了解过原理 ?</h2> <p>我们项目中注册中心用的是Nacos  , 基本上所有的注册中心的核心功能都包括服务注册 , 服务发现, 服务状态监控  , 他的核心原理如下 :</p> <ol><li>客户端启动时会将当前服务的信息包含ip、端口号、服务名、分组名、集群名等信息封装为一个Instance对象，准备向Nacos服务器注册服务，在注册服务之前，会根据Instance中的信息创建一个BeatInfo对象，然后创建一个定时任务，每隔一段时间向Nacos服务器发送PUT请求并携带相关信息，作为定时心跳连接，服务器端在接收到心跳请求后，会去检查当前服务列表中有没有该实例，如果没有的话将当前服务实例重新注册，注册完成后立即开启一个异步任务，更新客户端实例的最后心跳时间，如果当前实例是非健康状态则将其改为健康状态</li> <li>心跳定时任务创建完成后，通过POST请求将当前服务实例信息注册进Nacos服务器，服务器端在接收到注册实例请求后，会将请求携带的数据封装为一个Instance对象，然后为这个服务实例创建一个服务Service，一个Service下可能有多个服务实例，服务在Nacos保存到一个ConcurrentHashMap中，格式为命名空间为key，value为map，分组名和服务名为内层map的key，value为服务数据，Map(namespace,Map(group::serviceName, Service))</li> <li>服务创建完成之后，开启一个定时任务（5s执行一次），检查当前服务中的各个实例是否在线，如果实例上次心跳时间大于15s就将其状态设置为不健康，如果超出30s，则直接将该实例删除；</li> <li>然后将当前实例添加到对应服务列表中，这里会通过synchronized锁住当前服务，然后分两种情况向集群中添加实例，如果是持久化数据，则使用CP模型，通过leader节点将实例数据更新到内存和磁盘文件中，然后同步写入到其他节点 , 必须集群半数以上节点写入成功才会给客户端返回成功；</li> <li>如果是非持久话实例数据，使用的是AP模型，首先向任务阻塞队列添加一个本地服务实例改变任务，去更新本地服务列表，然后在遍历集群中所有节点，分别创建数据同步任务放进阻塞队列异步进行集群数据同步，不保证集群节点数据同步完成即可返回；</li> <li>在将服务实例更新到服务注册表中时，为了防止并发读写冲突，采用的是写时复制的思想，将原注册表数据拷贝一份，添加完成之后再替换回真正的注册表，更新完成之后，通过发布服务变化事件，将服务变动通知给客户端，采用的是UDP通信，客户端接收到UDP消息后会返回一个ACK信号，如果一定时间内服务端没有收到ACK信号，还会尝试重发，当超出重发时间后就不在重发，虽然通过UDP通信不能保证消息的可靠抵达，但是由于Nacos客户端会开启定时任务，每隔一段时间更新客户端缓存的服务列表，通过定时轮询更新服务列表做兜底，所以不用担心数据不会更新的情况，这样既保证了实时性，又保证了数据更新的可靠性；</li> <li>服务发现：客户端通过定时任务定时从服务端拉取服务数据保存在本地缓存，服务端在发生心跳检测、服务列表变更或者健康状态改变时会触发推送事件，在推送事件中会基于UDP通信将服务列表推送到客户端，同时开启定时任务，每隔10s定时推送数据到客户端</li></ol> <h2 id="_15-你们项目负载均衡如何实现的"><a href="#_15-你们项目负载均衡如何实现的" class="header-anchor">#</a> 15- 你们项目负载均衡如何实现的 ?</h2> <p>服务调用过程中的负载均衡一般使用SpringCloud的Ribbon 组件实现  , Feign的底层已经自动集成了Ribbon  , 使用起来非常简单</p> <p>客户端调用的话一般会通过网关, 通过网关实现请求的路由和负载均衡</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">gateway</span><span class="token punctuation">:</span>
+      <span class="token key atrule">routes</span><span class="token punctuation">:</span>
+        <span class="token comment"># 平台管理</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> wemedia
+          <span class="token key atrule">uri</span><span class="token punctuation">:</span> lb<span class="token punctuation">:</span>//leadnews<span class="token punctuation">-</span>wemedia
+          <span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> Path=/wemedia/<span class="token important">**</span>
+          <span class="token key atrule">filters</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> StripPrefix= 1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><strong>RIbbon负载均衡原理 :</strong></p> <p>SpringCloudRibbon的底层采用了一个拦截器，拦截了RestTemplate发出的请求，对地址做了修改。</p> <p><img src="/assets/img/image-20210713224724673.a3414a08.png" alt="image-20210713224724673"></p> <p>基本流程如下：</p> <ul><li>拦截我们的RestTemplate请求</li> <li>RibbonLoadBalancerClient会从请求url中获取服务名称</li> <li>DynamicServerListLoadBalancer根据服务名称到注册中心拉取服务列表</li> <li>注册中心返回列表</li> <li>IRule利用内置负载均衡规则，从列表中选择一个服务实例</li> <li>RibbonLoadBalancerClient用服务实例的IP和端口替换请求路径中的服务名称</li> <li>向服务实例发起http请求</li></ul> <h2 id="_16-ribbon负载均衡策略有哪些-如果想自定义负载均衡策略如何实现"><a href="#_16-ribbon负载均衡策略有哪些-如果想自定义负载均衡策略如何实现" class="header-anchor">#</a> 16- Ribbon负载均衡策略有哪些 ? 如果想自定义负载均衡策略如何实现 ?</h2> <p>Ribbon默认的负载均衡策略有七种 :</p> <table><thead><tr><th>**内置负载均衡规则类 **</th> <th><strong>规则描述</strong></th></tr></thead> <tbody><tr><td>RoundRobinRule</td> <td>简单轮询服务列表来选择服务器。它是Ribbon默认的负载均衡规则。</td></tr> <tr><td>AvailabilityFilteringRule</td> <td>对以下两种服务器进行忽略：   （1）在默认情况下，这台服务器如果3次连接失败，这台服务器就会被设置为“短路”状态。短路状态将持续30秒，如果再次连接失败，短路的持续时间就会几何级地增加。  （2）并发数过高的服务器。如果一个服务器的并发连接数过高，配置了AvailabilityFilteringRule规则的客户端也会将其忽略。并发连接数的上限，可以由客户端的ActiveConnectionsLimit属性进行配置。</td></tr> <tr><td>WeightedResponseTimeRule</td> <td>为每一个服务器赋予一个权重值。服务器响应时间越长，这个服务器的权重就越小。这个规则会随机选择服务器，这个权重值会影响服务器的选择。</td></tr> <tr><td><strong>ZoneAvoidanceRule</strong></td> <td>以区域可用的服务器为基础进行服务器的选择。使用Zone对服务器进行分类，这个Zone可以理解为一个机房、一个机架等。而后再对Zone内的多个服务做轮询。</td></tr> <tr><td>BestAvailableRule</td> <td>忽略那些短路的服务器，并选择并发数较低的服务器。</td></tr> <tr><td>RandomRule</td> <td>随机选择一个可用的服务器。</td></tr> <tr><td>RetryRule</td> <td>重试机制的选择逻辑</td></tr></tbody></table> <p><strong>默认的实现就是ZoneAvoidanceRule，是一种轮询方案</strong></p> <p>如果想要自定义负载均衡 , 可以自己创建类实现IRule接口 , 然后再通过配置类或者配置文件配置即可 :</p> <p>通过定义IRule实现可以修改负载均衡规则，有两种方式：</p> <ol><li>代码方式：在order-service中的OrderApplication类中，定义一个新的IRule：</li></ol> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@Bean</span>
+<span class="token keyword">public</span> <span class="token class-name">IRule</span> <span class="token function">randomRule</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RandomRule</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ol start="2"><li>配置文件方式：在order-service的application.yml文件中，添加新的配置也可以修改规则：</li></ol> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">userservice</span><span class="token punctuation">:</span> <span class="token comment"># 给某个微服务配置负载均衡规则，这里是userservice服务</span>
+  <span class="token key atrule">ribbon</span><span class="token punctuation">:</span>
+    <span class="token key atrule">NFLoadBalancerRuleClassName</span><span class="token punctuation">:</span> com.netflix.loadbalancer.RandomRule <span class="token comment"># 负载均衡规则 </span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="_17-你们项目的配置文件是怎么管理的"><a href="#_17-你们项目的配置文件是怎么管理的" class="header-anchor">#</a> 17- 你们项目的配置文件是怎么管理的 ?</h2> <p>大部分的固定的配置文件都放在服务本地 , 一些根据环境不同可能会变化的部分, 放到Nacos中</p> <h2 id="_18-你们项目中有没有做过限流-怎么做的"><a href="#_18-你们项目中有没有做过限流-怎么做的" class="header-anchor">#</a> 18- 你们项目中有没有做过限流 ? 怎么做的 ?</h2> <p>限流一般有二种方式设置 :</p> <p><strong>第一种  : 网关配置限流</strong></p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> api<span class="token punctuation">-</span>gateway
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+    <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">6379</span>
+    <span class="token key atrule">password</span><span class="token punctuation">:</span>
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">gateway</span><span class="token punctuation">:</span>
+      <span class="token key atrule">routes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>gateway
+          <span class="token key atrule">uri</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//192.168.1.211<span class="token punctuation">:</span>8088/
+          <span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> Path=/ytb/<span class="token important">**</span>
+          <span class="token key atrule">filters</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> StripPrefix=1
+            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> RequestRateLimiter
+              <span class="token key atrule">args</span><span class="token punctuation">:</span>
+                <span class="token key atrule">redis-rate-limiter.replenishRate</span><span class="token punctuation">:</span> <span class="token number">1</span>   <span class="token comment"># 令牌桶每秒填充速率</span>
+                <span class="token key atrule">redis-rate-limiter.burstCapacity</span><span class="token punctuation">:</span> <span class="token number">2</span>   <span class="token comment"># 令牌桶总容量</span>
+                <span class="token key atrule">key-resolver</span><span class="token punctuation">:</span> <span class="token string">&quot;#{@pathKeyResolver}&quot;</span>   <span class="token comment"># 使用 SpEL 表达式按名称引用 bean</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><blockquote><p>在上面的配置文件，配置了 redis 的信息，并配置了 RequestRateLimiter 的限流过滤器，该过滤器需要配置三个参数：</p> <p>burstCapacity，令牌桶总容量。
+replenishRate，令牌桶每秒填充平均速率。
+key-resolver，用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据 #{@beanName} 从 Spring 容器中获取 Bean 对象</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">KeyResolverConfiguration</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">KeyResolver</span> <span class="token function">pathKeyResolver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> exchange <span class="token operator">-&gt;</span> <span class="token class-name">Mono</span><span class="token punctuation">.</span><span class="token function">just</span><span class="token punctuation">(</span>exchange<span class="token punctuation">.</span><span class="token function">getRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getURI</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></blockquote> <p>常见的限流算法有：计数器算法，漏桶（Leaky Bucket）算法，令牌桶（Token Bucket）算法。</p> <p><strong>Spring Cloud Gateway官方提供了RequestRateLimiterGatewayFilterFactory过滤器工厂，使用Redis 和Lua脚本实现了 令牌桶 的方式。</strong></p> <p>令牌桶算法 是对漏桶算法的一种改进，漏桶算法能够限制请求调用的速率，而令牌桶算法能够在限制调用的平均速率的同时还允许一定程度的突发调用。在令牌桶算法中，存在一个桶，用来存放固定数量的令牌。算法中存在一种机制，以一定的速率往桶中放令牌。每次请求调用需要先获取令牌，只有拿到令牌，才有机会继续执行，否则选择选择等待可用的令牌、或者直接拒绝。</p> <p>放令牌这个动作是持续不断的进行，如果桶中令牌数达到上限，就丢弃令牌。所以就存在这种情况，桶中一直有大量的可用令牌，这时进来的请求就可以直接拿到令牌执行，比如设置qps为100，那么限流器初始化完成一秒后，桶中就已经有100个令牌了，这时服务还没完全启动好，等启动完成对外提供服务时，该限流器可以抵挡瞬时的100个请求。所以，只有桶中没有令牌时，请求才会进行等待，最后相当于以一定的速率执行。</p> <p><img src="/assets/img/208d714e589cd0b59166f2973bd9becf.0a7bac62.png" alt="img"></p> <p><strong>第二种 : 使用服务保护组件Sentinel实现限流</strong></p> <p>建议回去看看<strong>微服务保护</strong>课程中的限流配置</p> <h2 id="_19-断路器-熔断器用过嘛-断路器的状态有哪些"><a href="#_19-断路器-熔断器用过嘛-断路器的状态有哪些" class="header-anchor">#</a> 19- 断路器/熔断器用过嘛 ? 断路器的状态有哪些</h2> <p>我们项目中使用Hystrix/Sentinel实现的断路器  ,  断路器状态机包括三个状态：</p> <p><img src="/assets/img/image-20220520113844464.72ef8e7d.png" alt="image-20220520113844464"></p> <ul><li>closed：关闭状态，断路器放行所有请求，并开始统计异常比例、慢请求比例。超过阈值则切换到open状态</li> <li>open：打开状态，服务调用被<strong>熔断</strong>，访问被熔断服务的请求会被拒绝，快速失败，直接走降级逻辑。Open状态5秒后会进入half-open状态</li> <li>half-open：半开状态，放行一次请求，根据执行结果来判断接下来的操作。
+<ul><li>请求成功：则切换到closed状态</li> <li>请求失败：则切换到open状态</li></ul></li></ul> <h2 id="_20-你们项目中有做过服务降级嘛"><a href="#_20-你们项目中有做过服务降级嘛" class="header-anchor">#</a> 20- 你们项目中有做过服务降级嘛 ?</h2> <p>我们项目中涉及到服务调用得地方都会定义降级, 一般降级逻辑就是返回默认值  , 降级的实现也非常简单 , 就是创建一个类实现<code>FallbackFactory</code>接口 , 然后再对应的Feign客户端接口上面 , 通过@FeignClient指定降级类</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@Component</span>
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">OrderServiceFallbackFactory</span> <span class="token keyword">implements</span> <span class="token class-name">FallbackFactory</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">OrderService</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">OrderService</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Throwable</span> throwable<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">&quot;调用订单服务失败&quot;</span><span class="token punctuation">,</span>throwable<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">OrderService</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">weixinPay</span><span class="token punctuation">(</span><span class="token class-name">PayVO</span> payVO<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token class-name">Pager</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">OrderVO</span><span class="token punctuation">&gt;</span></span> <span class="token function">search</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> pageIndex<span class="token punctuation">,</span> <span class="token class-name">Integer</span> pageSize<span class="token punctuation">,</span> <span class="token class-name">String</span> orderNo<span class="token punctuation">,</span> <span class="token class-name">String</span> openId<span class="token punctuation">,</span> <span class="token class-name">String</span> startDate<span class="token punctuation">,</span> <span class="token class-name">String</span> endDate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Pager</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Long</span><span class="token punctuation">&gt;</span></span> <span class="token function">getBusinessTop10Skus</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> businessId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token class-name">Lists</span><span class="token punctuation">.</span><span class="token function">newArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h2 id="_21-你们项目中异常是怎么控制的"><a href="#_21-你们项目中异常是怎么控制的" class="header-anchor">#</a> 21- 你们项目中异常是怎么控制的 ?</h2> <p>我们会根据不同的异常情况定义异常类 , 实现RuntimeException接口 , 然后在需要进行异常处理的位置对外抛出对应异常</p> <p>在项目中使用@ControllerAdvice  +  @ExceptionHandler 捕获指定异常 , 处理异常</p> <p><img src="/assets/img/image-20220520114641642.974d2823.png" alt="image-20220520114641642"></p> <h2 id="_22-springboot项目读取配置文件的方式有哪些-如何实现配置的热更新"><a href="#_22-springboot项目读取配置文件的方式有哪些-如何实现配置的热更新" class="header-anchor">#</a> 22- SpringBoot项目读取配置文件的方式有哪些 ? 如何实现配置的热更新 ?</h2> <p>SpringBoot项目读取配置文件常用的方式有二种 :</p> <ol><li><p>通过@Value注解通过属性名称读取</p></li> <li><p>通过@ConfigurationProperties属性 , 批量读取配置文件配置到属性配置类</p></li></ol> <p>实现热更新的方式也有二种 : 首先需要将配置文件配置到配置中心中 , 之后通过</p> <ol><li>@Value + @RefreshScope注解实现热更新</li> <li>通过@ConfigurationProperties注解读取的属性, 自动会热更新</li></ol></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">4/3/2023, 1:04:46 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/docs/theme-reco/ssm.html" class="prev">
+          ssm面经
+        </a></span> <span class="next"><a href="/docs/theme-reco/mq.html">
+          MQ面经
+        </a></span></p></div> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:0;" data-v-b57cc07c data-v-7dd95ae2></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.9553e677.js" defer></script><script src="/assets/js/3.979a681a.js" defer></script><script src="/assets/js/1.9975a5e7.js" defer></script><script src="/assets/js/8.412f9bc6.js" defer></script>
+  </body>
+</html>

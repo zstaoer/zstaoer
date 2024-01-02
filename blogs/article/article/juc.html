@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JUC | zstblog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon1.ico">
+    <meta name="description" content="技术分享">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.e853742c.css" as="style"><link rel="preload" href="/assets/js/app.9553e677.js" as="script"><link rel="preload" href="/assets/js/3.979a681a.js" as="script"><link rel="preload" href="/assets/js/1.9975a5e7.js" as="script"><link rel="preload" href="/assets/js/38.075aa62d.js" as="script"><link rel="prefetch" href="/assets/js/10.1e8468c9.js"><link rel="prefetch" href="/assets/js/11.7729bf5a.js"><link rel="prefetch" href="/assets/js/12.9557c0e3.js"><link rel="prefetch" href="/assets/js/13.5397dffc.js"><link rel="prefetch" href="/assets/js/14.d91a7549.js"><link rel="prefetch" href="/assets/js/15.12c66841.js"><link rel="prefetch" href="/assets/js/16.97c16572.js"><link rel="prefetch" href="/assets/js/17.bc6f6acd.js"><link rel="prefetch" href="/assets/js/18.a17ecee2.js"><link rel="prefetch" href="/assets/js/19.8f631be8.js"><link rel="prefetch" href="/assets/js/20.e493abb8.js"><link rel="prefetch" href="/assets/js/21.5189a833.js"><link rel="prefetch" href="/assets/js/22.6c980202.js"><link rel="prefetch" href="/assets/js/23.0a8ddf3a.js"><link rel="prefetch" href="/assets/js/24.a36362ba.js"><link rel="prefetch" href="/assets/js/25.9c8b53e2.js"><link rel="prefetch" href="/assets/js/26.69c456d6.js"><link rel="prefetch" href="/assets/js/27.e2bbe101.js"><link rel="prefetch" href="/assets/js/28.1e8db581.js"><link rel="prefetch" href="/assets/js/29.7f55762b.js"><link rel="prefetch" href="/assets/js/30.2a156191.js"><link rel="prefetch" href="/assets/js/31.8b7de805.js"><link rel="prefetch" href="/assets/js/32.b3f5d029.js"><link rel="prefetch" href="/assets/js/33.08ea4771.js"><link rel="prefetch" href="/assets/js/34.061543c8.js"><link rel="prefetch" href="/assets/js/35.5d582650.js"><link rel="prefetch" href="/assets/js/36.033b520c.js"><link rel="prefetch" href="/assets/js/37.d2585658.js"><link rel="prefetch" href="/assets/js/39.ccfbc284.js"><link rel="prefetch" href="/assets/js/4.705d9b2d.js"><link rel="prefetch" href="/assets/js/40.f60e24ed.js"><link rel="prefetch" href="/assets/js/41.7629259b.js"><link rel="prefetch" href="/assets/js/42.ad66b4b5.js"><link rel="prefetch" href="/assets/js/43.9a95bcbb.js"><link rel="prefetch" href="/assets/js/44.44e2e197.js"><link rel="prefetch" href="/assets/js/45.5687f71b.js"><link rel="prefetch" href="/assets/js/46.7312795e.js"><link rel="prefetch" href="/assets/js/5.0b489da2.js"><link rel="prefetch" href="/assets/js/6.bce4681f.js"><link rel="prefetch" href="/assets/js/7.3309610d.js"><link rel="prefetch" href="/assets/js/8.412f9bc6.js"><link rel="prefetch" href="/assets/js/9.25944bc3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e853742c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>zstblog</h3> <p class="description" data-v-59e6cb88>技术分享</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>zstaoer</span>
+          
+        <!---->
+        2023
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="zstblog" class="logo"> <span class="site-name">zstblog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/MySql/" class="nav-link"><i class="undefined"></i>
+  MySql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Article/" class="nav-link"><i class="undefined"></i>
+  Article
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MybatisPlus/" class="nav-link"><i class="undefined"></i>
+  MybatisPlus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/EasyExcel/" class="nav-link"><i class="undefined"></i>
+  EasyExcel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/springboot/" class="nav-link"><i class="undefined"></i>
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面经/" class="nav-link"><i class="undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      vue3
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/article/v3/20230911.html" class="nav-link"><i class="undefined"></i>
+  常用指令
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/v3/202309111620.html" class="nav-link"><i class="undefined"></i>
+  计算属性 &amp; 侦听器 &amp; 样式绑定 &amp; 模板引用
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/v3/202309111638.html" class="nav-link"><i class="undefined"></i>
+  Vue3 基础 – Vite &amp; 组件基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JavaScript
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230912-Map.html" class="nav-link"><i class="undefined"></i>
+  Map
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230912-Set.html" class="nav-link"><i class="undefined"></i>
+  Set
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-List.html" class="nav-link"><i class="undefined"></i>
+  List
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-bool.html" class="nav-link"><i class="undefined"></i>
+  布尔
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-num.html" class="nav-link"><i class="undefined"></i>
+  数字类型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-string.html" class="nav-link"><i class="undefined"></i>
+  字符串
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="undefined"></i>
+  java面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/redis.html" class="nav-link"><i class="undefined"></i>
+  Redis面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/mq.html" class="nav-link"><i class="undefined"></i>
+  MQ面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/SpringBoot-SpringCloud.html" class="nav-link"><i class="undefined"></i>
+  SpringBoot&amp;SpringCloud面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/ssm.html" class="nav-link"><i class="undefined"></i>
+  ssm面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/mysql.html" class="nav-link"><i class="undefined"></i>
+  MySql面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/Transactional.html" class="nav-link"><i class="undefined"></i>
+  事务控制
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/avatar1.jpg" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    zstaoer
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>35</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>26</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/MySql/" class="nav-link"><i class="undefined"></i>
+  MySql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Article/" class="nav-link"><i class="undefined"></i>
+  Article
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MybatisPlus/" class="nav-link"><i class="undefined"></i>
+  MybatisPlus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/EasyExcel/" class="nav-link"><i class="undefined"></i>
+  EasyExcel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/springboot/" class="nav-link"><i class="undefined"></i>
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面经/" class="nav-link"><i class="undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      vue3
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/article/v3/20230911.html" class="nav-link"><i class="undefined"></i>
+  常用指令
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/v3/202309111620.html" class="nav-link"><i class="undefined"></i>
+  计算属性 &amp; 侦听器 &amp; 样式绑定 &amp; 模板引用
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/v3/202309111638.html" class="nav-link"><i class="undefined"></i>
+  Vue3 基础 – Vite &amp; 组件基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JavaScript
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230912-Map.html" class="nav-link"><i class="undefined"></i>
+  Map
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230912-Set.html" class="nav-link"><i class="undefined"></i>
+  Set
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-List.html" class="nav-link"><i class="undefined"></i>
+  List
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-bool.html" class="nav-link"><i class="undefined"></i>
+  布尔
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-num.html" class="nav-link"><i class="undefined"></i>
+  数字类型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-string.html" class="nav-link"><i class="undefined"></i>
+  字符串
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="undefined"></i>
+  java面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/redis.html" class="nav-link"><i class="undefined"></i>
+  Redis面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/mq.html" class="nav-link"><i class="undefined"></i>
+  MQ面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/SpringBoot-SpringCloud.html" class="nav-link"><i class="undefined"></i>
+  SpringBoot&amp;SpringCloud面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/ssm.html" class="nav-link"><i class="undefined"></i>
+  ssm面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/mysql.html" class="nav-link"><i class="undefined"></i>
+  MySql面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/Transactional.html" class="nav-link"><i class="undefined"></i>
+  事务控制
+</a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>JUC</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>zstaoer</span>
+          
+        <!---->
+        2023
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">JUC</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>zstaoer</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>6/21/2023</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>JUC</span></i></div></div> <div class="theme-reco-content content__default"><div class="custom-block tip"><p class="title"></p><p>JUC相关类</p></div> <h2 id="juc"><a href="#juc" class="header-anchor">#</a> JUC</h2> <h3 id="level-1"><a href="#level-1" class="header-anchor">#</a> level_1</h3> <h4 id="_1-并发与并行-线程与进程的概念"><a href="#_1-并发与并行-线程与进程的概念" class="header-anchor">#</a> 1.并发与并行, 线程与进程的概念</h4> <ul><li><p>并行：指两个或多个事件在同一时刻发生(同时执行)</p></li> <li><p>并发：指两个或多个事件在同一个时间段内发生(交替执行)</p></li> <li><p>进程：是指一个内存中运行的应用程序 , 每个进程都有一个独立的内存空间 , 一个应用程序可以同时运行多个进程;进程也是程序的一次执行过程 , 是系统运行程序的基本单位;系统运行一个程序即是一个进程从创建、运行到消亡的过程.   (有独立的内存空间 , 进程中的数据存放空间(堆空间和栈空间)是独立的 , 至少有一个线程. )</p></li> <li><p>线程：是操作系统能够进行运算调度的最小单位. 是进程中的实际运作单元 , 负责当前进程中程序的执行 , 一个进程中至少有一个线程. 一个进程中是可以有多个线程的 , 这个应用程序也可以称之为多线程程序. (堆空间是共享的 , 栈空间是独立的 , 线程消耗的资源比进程小的多. )</p></li></ul> <h4 id="_2-java中线程类-threa-及其常用api"><a href="#_2-java中线程类-threa-及其常用api" class="header-anchor">#</a> 2.Java中线程类(Threa)及其常用API</h4> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span></span>Thread</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//核心方法, 线程任务</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//启动线程</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Thread</span> <span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//获取当前线程对象的引用</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token keyword">long</span> millis<span class="token punctuation">,</span> <span class="token keyword">int</span> nanos<span class="token punctuation">)</span><span class="token comment">// 暂停当前线程一段时间</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">native</span> <span class="token keyword">void</span> <span class="token keyword">yield</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 暂停当前正在执行的线程对象, 并执行其他线程 </span>
+	<span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">join</span><span class="token punctuation">(</span><span class="token keyword">long</span> millis<span class="token punctuation">,</span> <span class="token keyword">int</span> nanos<span class="token punctuation">)</span> <span class="token comment">// 等待指定时间后, 线程终止, 被打断将抛异常</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h4 id="_3-thread和runable"><a href="#_3-thread和runable" class="header-anchor">#</a> 3.Thread和Runable</h4> <ul><li><p>Thread是Runable的实现类</p></li> <li><p>继承Thread和实现Runable都可以创建线程对象, 两种方式对比如下</p> <ul><li><p>继承Thread可以使用Thread的内部方法, Runable中只有run方法</p></li> <li><p>实现Runable避免单继承的局限性</p></li> <li><p>解耦, 增强了程序的健壮性</p></li> <li><p>线程池只能放入Runable或Callable类, 不能放入继承Thread的类</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Executor</span> <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> command<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li></ul></li></ul> <h4 id="_4-java中使用线程池的基本api"><a href="#_4-java中使用线程池的基本api" class="header-anchor">#</a> 4.java中使用线程池的基本API</h4> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span>Executors</span>
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ExecutorService</span> <span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token keyword">int</span> nThreads<span class="token punctuation">)</span> <span class="token comment">// 创建指定容量的线程池</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ExecutorService</span> <span class="token keyword">extends</span> <span class="token class-name">Executor</span>
+
+<span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">Future</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">submit</span><span class="token punctuation">(</span><span class="token class-name">Callable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> task<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 提交线程任务并执行</span>
+<span class="token class-name">Future</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span> <span class="token function">submit</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> task<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//提交一个 Runnable 任务用于执行, 并返回一个表示该任务的 Future. </span>
+<span class="token keyword">void</span> <span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 启动一次顺序关闭, 执行以前提交的任务, 不接受新任务</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token class-name">Callable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Double</span><span class="token punctuation">&gt;</span></span> callable <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Callable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Double</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">Double</span> <span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token comment">//TODO</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h4 id="_5-object-wait-与thread-sleep-long-的区别"><a href="#_5-object-wait-与thread-sleep-long-的区别" class="header-anchor">#</a> 5.Object.wait()与Thread.sleep(long)的区别</h4> <ul><li>Thread 中的sleep(long)方法：不释放锁, 休眠结束之后继续执行</li> <li>Object 中的wait(long)方法：调用即释放锁 (notify() | notifyAll()唤醒)</li></ul> <h3 id="level-2"><a href="#level-2" class="header-anchor">#</a> level_2</h3> <h4 id="_1-线程的生命周期-thread-state-线程状态"><a href="#_1-线程的生命周期-thread-state-线程状态" class="header-anchor">#</a> 1.线程的生命周期: Thread.State 线程状态</h4> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// Thread内部类</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">State</span> <span class="token punctuation">{</span>
+    <span class="token constant">NEW</span><span class="token punctuation">,</span> <span class="token comment">// 新建, 未调用start()</span>
+
+    <span class="token constant">RUNNABLE</span><span class="token punctuation">,</span> <span class="token comment">// 可运行 已调用start() 具体分为ready跟running, 当线程被挂起或者调用Thread.yield()的时候为ready</span>
+
+    <span class="token constant">BLOCKED</span><span class="token punctuation">,</span> <span class="token comment">// 阻塞, 等待有锁可用 获取锁后变为RUNNABLE</span>
+
+    <span class="token constant">WAITING</span><span class="token punctuation">,</span> <span class="token comment">// 等待, 不能自动唤醒 Object.wait() | Thread.join()</span>
+
+    <span class="token constant">TIMED_WAITING</span><span class="token punctuation">,</span> <span class="token comment">// 计时等待, 到超时期满, 或者被其他线程唤醒 Thread.sleep(long) | Object.wait(long) | Thread.join(long) | LockSupport.parkNanos(long) | LockSupport.parkUntil(long)</span>
+
+    <span class="token constant">TERMINATED</span><span class="token punctuation">;</span> <span class="token comment">// 被终止. 异常或执行完任务, 不能再执行 start()</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h4 id="_2-jvm中多线程的运行机制"><a href="#_2-jvm中多线程的运行机制" class="header-anchor">#</a> 2.JVM中多线程的运行机制</h4> <p>每个线程有自己独立的栈区域, 共用一个堆区域, 操作共享变量时会先拷贝一个变量副本到自己的工作内存(里面有线程自己的局部变量等), 执行共享变量操作时 操作的是这个变量副本, 所以高并发情况下可能会造成可见性的问题</p> <p>[线程对变量的所有的操作(读, 取)都必须在工作内存中完成, 而不能直接读写主内存中的变量, 不同线程之间也不能直接访问, 对工作内存中的变量, 线程间变量的值的传递需要通过主内存完成]</p> <h4 id="_3-volatile和synchronized关键字的区别"><a href="#_3-volatile和synchronized关键字的区别" class="header-anchor">#</a> 3.volatile和synchronized关键字的区别</h4> <ol><li>volatile本质是在告诉jvm当前变量在寄存器(工作内存)中的值是不确定的 , 需要从主存中读取synchronized则是锁定当前变量 , 只有当前线程可以访问该变量 , 其他线程被阻塞住</li> <li>volatile仅能使用在变量级别; synchronized则可以使用在变量/方法和类级别的</li> <li>volatile仅能实现变量的修改可见性, 不能保证原子性; 而synchronized则可以保证变量的修改可见性和原子性</li> <li>volatile不会造成线程的阻塞; synchronized可能会造成线程的阻塞.</li> <li>volatile标记的变量不会被编译器优化; synchronized标记的变量可以被编译器优化</li></ol> <h4 id="_4-java-util-concurrent-atomic包下常用的类-原子类-及其底层原理-cas"><a href="#_4-java-util-concurrent-atomic包下常用的类-原子类-及其底层原理-cas" class="header-anchor">#</a> 4.java.util.concurrent.<strong>atomic</strong>包下常用的类(原子类)及其底层原理(CAS)</h4> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token class-name"><span class="token namespace">sun<span class="token punctuation">.</span>misc<span class="token punctuation">.</span></span>Unsafe</span>
+
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Unsafe</span> unsafe <span class="token operator">=</span> <span class="token class-name">Unsafe</span><span class="token punctuation">.</span><span class="token function">getUnsafe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 原子操作, cpu命令</span>
+<span class="token comment">// 仅当预期值与内存中的值相同时, 才执行值替换操作</span>
+<span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">native</span> <span class="token keyword">boolean</span> <span class="token function">compareAndSwapInt</span><span class="token punctuation">(</span><span class="token class-name">Object</span> var1<span class="token punctuation">,</span> <span class="token keyword">long</span> var2<span class="token punctuation">,</span> <span class="token keyword">int</span> var4<span class="token punctuation">,</span> <span class="token keyword">int</span> var5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>ABA问题(狸猫换太子问题)</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>atomic<span class="token punctuation">.</span></span>AtomicStampedReference</span>
+
+<span class="token comment">//底层使用了时间戳, 就和我们添加一个version字段一样的效果</span>
+<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">compareAndSet</span><span class="token punctuation">(</span><span class="token class-name">V</span> expectedReference<span class="token punctuation">,</span>
+                              <span class="token class-name">V</span> newReference<span class="token punctuation">,</span>
+                              <span class="token keyword">int</span> expectedStamp<span class="token punctuation">,</span>
+                              <span class="token keyword">int</span> newStamp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Pair</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span></span> current <span class="token operator">=</span> pair<span class="token punctuation">;</span>
+    <span class="token keyword">return</span>
+        expectedReference <span class="token operator">==</span> current<span class="token punctuation">.</span>reference <span class="token operator">&amp;&amp;</span>
+        expectedStamp <span class="token operator">==</span> current<span class="token punctuation">.</span>stamp <span class="token operator">&amp;&amp;</span>
+        <span class="token punctuation">(</span><span class="token punctuation">(</span>newReference <span class="token operator">==</span> current<span class="token punctuation">.</span>reference <span class="token operator">&amp;&amp;</span>
+          newStamp <span class="token operator">==</span> current<span class="token punctuation">.</span>stamp<span class="token punctuation">)</span> <span class="token operator">||</span>
+         <span class="token function">casPair</span><span class="token punctuation">(</span>current<span class="token punctuation">,</span> <span class="token class-name">Pair</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>newReference<span class="token punctuation">,</span> newStamp<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h4 id="_5-java-util-concurrent-locks-lock"><a href="#_5-java-util-concurrent-locks-lock" class="header-anchor">#</a> 5.java.util.concurrent.locks.Lock</h4> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token class-name">Lock</span> lock <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ReentrantLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">ReentrantLock</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> 表示公平锁<span class="token punctuation">,</span> 不带参数默认为<span class="token boolean">false</span><span class="token punctuation">,</span> 非公平锁
+
+<span class="token class-name">ReentrantLock</span>可以替代<span class="token keyword">synchronized</span>
+但是<span class="token class-name">ReentrantLock</span>必须手动开启锁<span class="token operator">/</span>关闭锁<span class="token punctuation">,</span> <span class="token keyword">synchronized</span>遇到异常会自动释放锁<span class="token punctuation">,</span> <span class="token class-name">ReentrantLock</span>需要手动关闭<span class="token punctuation">,</span> 一般都是放在<span class="token keyword">finally</span>中关闭
+	定义锁 <span class="token class-name">Lock</span> lock <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ReentrantLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	开启 lock<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	关闭 lock<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+使用<span class="token class-name">Reentrantlock</span>可以进行“尝试锁定”tryLock<span class="token punctuation">,</span>这样无法锁定<span class="token punctuation">,</span> 或者在指定时间内无法锁定<span class="token punctuation">,</span> 线程可以决定是否继续等待<span class="token punctuation">,</span> 使用tryLock进行尝试锁定<span class="token punctuation">,</span> 不管锁定与否<span class="token punctuation">,</span> 方法都将继续执行<span class="token punctuation">,</span> 可以根据tryLock的返回值来判定是否锁定<span class="token punctuation">,</span> 也可以指定tryLock的时间<span class="token punctuation">,</span> 由于<span class="token function">tryLock</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span>抛出异常<span class="token punctuation">,</span> 所以要注意unclock的处理<span class="token punctuation">,</span> 必须放到<span class="token keyword">finally</span>中<span class="token punctuation">,</span> 如果tryLock未锁定<span class="token punctuation">,</span> 则不需要unlock
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h4 id="_6-juc下常用并发辅助类"><a href="#_6-juc下常用并发辅助类" class="header-anchor">#</a> 6.JUC下常用并发辅助类</h4> <ul><li><p><strong>CountDownLatch</strong></p> <ul><li>底层是通过一个计数器来控制的, 每当一个线程完成了自己的任务后 , 可以调用countDown()方法让
+计数器-1,当计数器到达0时, await()方法的线程阻塞状态解除, 线程继续执行</li> <li>与join区别, 使用join的线程将被阻塞, 使用countDown的线程不受影响, 只有调用await()的时候才会阻塞</li></ul> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token class-name">CountDownLatch</span><span class="token punctuation">(</span><span class="token keyword">int</span> count<span class="token punctuation">)</span><span class="token comment">// 初始化一个指定计数器的CountDownLatch对象</span>
+    
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">await</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span><span class="token comment">// 让当前线程等待</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">countDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 计数器进行减1</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li><p><strong>CyclicBarrier</strong></p> <ul><li>让一组线程到达一个屏障(也可以叫同步点)时被阻塞, 直到最后一个线程到达屏障时, 屏障才会打开, 所有被屏障拦截的线程才会继续运行 (使用场景：可以用于多线程计算数据, 最后合并计算结果)</li></ul> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token class-name">CyclicBarrier</span><span class="token punctuation">(</span><span class="token keyword">int</span> parties<span class="token punctuation">,</span> <span class="token class-name">Runnable</span> barrierAction<span class="token punctuation">)</span><span class="token comment">// 用于在线程到达屏障时, 优先执行barrierAction,方便处理更复杂的业务场景</span>
+    
+<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">await</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">// 每个线程调用await方法告诉CyclicBarrier我已经到达了屏障, 然后当前线程被阻塞</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li> <li><p><strong>Semaphore</strong></p> <ul><li>控制线程的并发数量</li> <li>对于Semaphore来说, 它要保证的是资源的互斥而不是资源的同步, 在同一时刻是无法保证同步的, 但是却可以保证资源的互斥. 只是限制了访问某些资源的线程数, 其实并没有实现同步.</li></ul> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token class-name">Semaphore</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token keyword">permits</span><span class="token punctuation">,</span> <span class="token keyword">boolean</span> fair<span class="token punctuation">)</span> <span class="token comment">//fair 表示公平性, 如果这个设为 true 的话, 下次执行的线程会是等待最久的线程, 默认为false</span>
+    
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span> 表示获取许可
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 表示释放许可
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li><p><strong>Exchanger</strong></p> <ul><li>两个线程间的数据交换</li></ul> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token class-name">V</span> <span class="token function">exchange</span><span class="token punctuation">(</span><span class="token class-name">V</span> x<span class="token punctuation">)</span> <span class="token comment">//等待另一个线程到达此交换点(除非当前线程被中断), 然后将给定的对象传送给该线程, 并接收该线程的对象</span>
+
+<span class="token class-name">V</span> <span class="token function">exchange</span><span class="token punctuation">(</span><span class="token class-name">V</span> v<span class="token punctuation">,</span> <span class="token keyword">long</span> timeout<span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span> unit<span class="token punctuation">)</span> <span class="token comment">//等待另一个线程到达此交换点(除非当前线程被中断或超出了指定的等待时间), 然后将给定的对象传送给该线程, 并接收该线程的对象 </span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li></ul> <h4 id="_7-悲观锁-乐观锁"><a href="#_7-悲观锁-乐观锁" class="header-anchor">#</a> 7.悲观锁/乐观锁</h4> <div class="language-tex line-numbers-mode"><pre class="language-tex"><code>一种思想, java中JUC.atomic下的类, 底层CAS就是乐观锁的一种实现, 默认数据不会改变, 心比较乐观;
+synchronized | ReentrantLock 就是悲观锁的一种实现, 比较悲观, 每次都认为其他人会改变数据, 所以加锁不让其他人操作, 整个数据处理过程只能自己操作
+
+乐观锁比较适用于读多写少的情况(多读场景)
+悲观锁比较适用于写多读少的情况(多写场景)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="level-3"><a href="#level-3" class="header-anchor">#</a> level_3</h3> <h4 id="_1-concurrenthashmap与hashtable区别-效率相比"><a href="#_1-concurrenthashmap与hashtable区别-效率相比" class="header-anchor">#</a> 1.ConcurrentHashMap与HashTable区别(效率相比)</h4> <p>HashTable底层使用synchronized对整个数组进行锁定, 而ConcurrentHashMap使用CAS+局部锁定(分段锁)</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// 常用并发容器</span>
+<span class="token class-name">CopyOnWriteArrayList</span>
+<span class="token class-name">CopyOnWriteArraySet</span>
+<span class="token class-name">ConcurrentHashMap</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><strong>分段锁</strong></p> <div class="language-tex line-numbers-mode"><pre class="language-tex"><code>分段锁其实是一种锁的设计, 并不是具体的一种锁, ConcurrentHashMap并发的实现就是通过分段锁的形式来实现高效的并发操作 
+
+ConcurrentHashMap中的分段锁称为Segment, 它类似于HashMap(JDK7与JDK8中HashMap的实现)的结构, 即内部拥有一个Entry数组, 数组中的每个元素又是一个链表; 同时又是一个ReentrantLock(Segment继承了ReentrantLock). 当需要put元素的时候, 并不是对整个hashmap进行加锁, 而是先通过hashcode来知道他要放在哪一个分段中, 然后对这个分段进行加锁, 所以当多线程put的时候, 只要不是放在一个分段中, 就实现了真正的并行的插入 
+但是, 在统计size的时候, 就是获取hashmap全局信息的时候, 就需要获取所有的分段锁才能统计 
+
+分段锁的设计目的是细化锁的粒度, 当操作不需要更新整个数组的时候, 就仅仅针对数组中的一项进行加锁操作
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h4 id="_2-公平锁-非公平锁"><a href="#_2-公平锁-非公平锁" class="header-anchor">#</a> 2.公平锁 | 非公平锁</h4> <div class="language-tex line-numbers-mode"><pre class="language-tex"><code>公平锁是指多个线程按照申请锁的顺序来获取锁; 
+非公平锁是指多个线程获取锁的顺序并不是按照申请锁的顺序, 有可能后申请的线程比先申请的线程优先获取锁; 有可能会造成优先级反转或者饥饿现象, 非公平锁的优点在于吞吐量比公平锁大
+
+对于Java ReentrantLock而言, 通过构造函数指定该锁是否是公平锁, 默认是非公平锁 
+
+对于Synchronized而言, 也是一种非公平锁, 由于其并不像ReentrantLock是通过AQS的来实现线程调度, 所以并没有任何办法使其变成公平锁 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h4 id="_3-可重入锁-递归锁"><a href="#_3-可重入锁-递归锁" class="header-anchor">#</a> 3.可重入锁(递归锁)</h4> <div class="language-tex line-numbers-mode"><pre class="language-tex"><code>是指在同一个线程在外层方法获取锁的时候, 在进入内层方法会自动获取锁
+
+ReentrantLock, Synchronized都是可重入锁 
+可重入锁的一个好处是可一定程度避免死锁
+
+比如说A类中有个methodA1()
+	public synchronized methodA1()<span class="token punctuation">{</span>
+		methodA2();
+	<span class="token punctuation">}</span>
+	
+	public synchronized methodA2()<span class="token punctuation">{</span>
+	    //TODO
+	<span class="token punctuation">}</span>
+当线程调用methodA1时, 获取到锁之后, 执行到内部methodA2, 就能再次获取本对象的锁, 一定程度上避免了死锁
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h4 id="_4-独享锁-共享锁-互斥锁-读写锁"><a href="#_4-独享锁-共享锁-互斥锁-读写锁" class="header-anchor">#</a> 4.独享锁/共享锁 | 互斥锁/读写锁</h4> <div class="language-tex line-numbers-mode"><pre class="language-tex"><code>独享锁是指该锁一次只能被一个线程所持有; 
+共享锁是指该锁可被多个线程所持有 
+
+ReentrantLock和Synchronized都是独享锁 
+	但是对于Lock的另一个实现类ReadWriteLock, 其读锁是共享锁, 其写锁是独享锁 
+	读锁的共享锁可保证并发读是非常高效的, 读写 | 写读 | 写写的过程是互斥的 
+
+独享锁/共享锁是一种广义的说法, 互斥锁/读写锁就是具体的实现 
+	互斥锁在Java中的具体实现 ReentrantLock
+	读写锁在Java中的具体实现 ReadWriteLock
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h4 id="_5-偏向锁-轻量级锁-重量级锁"><a href="#_5-偏向锁-轻量级锁-重量级锁" class="header-anchor">#</a> 5.偏向锁/轻量级锁/重量级锁</h4> <div class="language-tex line-numbers-mode"><pre class="language-tex"><code>这三种锁是指锁的状态, 并且是针对Synchronized 
+在Java 5通过引入 锁升级 的机制来实现高效Synchronized 
+这三种锁的状态是通过对象监视器在对象头中的字段来表明的
+
+偏向锁(偏隙锁)
+	是指一段同步代码一直被一个线程所访问, 那么该线程会自动获取锁, 降低获取锁的代价 
+
+轻量级锁(其他线程自旋)
+	是指当锁是偏向锁的时候, 被另一个线程所访问, 偏向锁就会升级为轻量级锁, 其他线程会通过自旋的形式尝试获取锁, 不会阻塞, 提高性能 
+
+重量级锁(其他线程阻塞)
+	是指当锁为轻量级锁的时候, 另一个线程虽然是自旋, 但自旋不会一直持续下去, 当自旋一定次数的时候, 还没有获取到锁, 就会进入阻塞, 轻量级的锁就膨胀为重量级锁. 重量级锁会让其他申请的线程进入阻塞, 性能降低 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h4 id="_6-自旋锁"><a href="#_6-自旋锁" class="header-anchor">#</a> 6.自旋锁</h4> <div class="language-tex line-numbers-mode"><pre class="language-tex"><code>	如果某线程需要获取锁,但该锁已经被其他线程占用时,该线程不会一上来就被挂起(阻塞), 而是采用循环的方式去尝试获取锁, 这样的好处是减少线程切换的消耗, 缺点是如果锁持有者持有时间过长, 长时间的自旋会消耗CPU 
+	自旋锁比较适用于锁使用者保持锁时间比较短的情况, 这种情况下自旋锁的效率要远高于互斥锁
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="_7-aqs"><a href="#_7-aqs" class="header-anchor">#</a> 7.AQS</h4> <p>java.util.concurrent.locks.AbstractQueuedSynchronizer</p> <p>参见：</p> <ul><li><p>https://www.cnblogs.com/waterystone/p/4920797.html</p></li> <li><p>https://blog.csdn.net/mulinsen77/article/details/84583716</p></li></ul> <div class="language-tex line-numbers-mode"><pre class="language-tex"><code>	AQS是JDK下提供的一套用于实现基于FIFO等待队列的阻塞锁和相关的同步器的一个同步框架. 这个抽象类被设计为作为一些可用原子int值来表示状态的同步器的基类. 比如 CountDownLatch 类, 其内部有一个继承了  AbstractQueuedSynchronizer 的内部类 Sync. 可见 CountDownLatch 是基于AQS框架来实现的一个同步器. 类似的同步器在JUC下还有不少(如 Semaphore)
+
+	AQS的核心思想是，如果被请求的共享资源空闲，则将当前请求资源的线程设置为有效的工作线程，并将共享资源设置为锁定状态，如果被请求的共享资源被占用，那么就需要一套线程阻塞等待以及被唤醒时锁分配的机制，这个机制AQS是用CLH队列锁实现的，即将暂时获取不到锁的线程加入到队列中。
+	CLH（Craig，Landin，and Hagersten）队列是一个虚拟的双向队列，虚拟的双向队列即不存在队列实例，仅存在节点之间的关联关系。
+	AQS是将每一条请求共享资源的线程封装成一个CLH锁队列的一个结点（Node），来实现锁的分配。
+	简单来说, AQS就是基于CLH队列,用volatile修饰共享变量state,线程通过CAS去改变状态符,成功则获取锁成功,失败则进入等待队列,等待被唤醒。
+
+	以ReentrantLock为例, state初始化为0,表示未锁定状态,A线程lock()时,会调用tryAcquire()独占锁并将state+1.之后其他线程再想tryAcquire的时候就会失败,直到A线程unlock()到state=0为止,其他线程才有机会获取该锁。A释放锁之前,自己也是可以重复获取此锁（state累加）,这就是可重入的概念。
+注意：获取多少次锁就要释放多少次锁,保证state是能回到零态的。
+
+	以CountDownLatch为例,任务分N个子线程去执行,state就初始化为N,N个线程并行执行,每个线程执行完之后countDown（）一次,state就会CAS减一。当N子线程全部执行完毕,state=0,会unpark()主调用线程,主调用线程就会从await()函数返回,继续之后的动作。
+	
+AQS 定义了两种资源共享方式:
+	1.Exclusive: 独占, 只有一个线程能执行, 如ReentrantLock
+	2.Share: 共享, 多个线程可以同时执行, 如Semaphore, CountDownLatch, ReadWriteLock, CyclicBarrie
+
+实现不同的方法, 以决定锁策略:
+	tryAcquire(int)：独占方式。尝试获取资源,成功则返回true,失败则返回false。
+	tryRelease(int)：独占方式。尝试释放资源,成功则返回true,失败则返回false。
+	tryAcquireShared(int)：共享方式。尝试获取资源。负数表示失败；0表示成功,但没有剩余可用资源；正数表示成功,且有剩余资源。
+	tryReleaseShared(int)：共享方式。尝试释放资源,如果释放后允许唤醒后续等待结点返回true,否则返回false。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>​	
+​		一般来说,自定义同步器要么是独占方法,要么是共享方式,他们也只需实现tryAcquire/tryRelease || tryAcquireShared/tryReleaseShared中的一种即可。但AQS也支持自定义同步器同时实现独占和共享两种方式, 如ReentrantReadWriteLock。	
+​		
+​		... 自己去看上面两个链接吧 ...</p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/11/2023, 3:49:09 AM</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:0;" data-v-b57cc07c data-v-7dd95ae2></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.9553e677.js" defer></script><script src="/assets/js/3.979a681a.js" defer></script><script src="/assets/js/1.9975a5e7.js" defer></script><script src="/assets/js/38.075aa62d.js" defer></script>
+  </body>
+</html>

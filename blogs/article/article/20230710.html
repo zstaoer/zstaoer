@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Springboot实现MySql百万级数据导出避免OOM | zstblog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon1.ico">
+    <meta name="description" content="技术分享">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.e853742c.css" as="style"><link rel="preload" href="/assets/js/app.9553e677.js" as="script"><link rel="preload" href="/assets/js/3.979a681a.js" as="script"><link rel="preload" href="/assets/js/1.9975a5e7.js" as="script"><link rel="preload" href="/assets/js/19.8f631be8.js" as="script"><link rel="prefetch" href="/assets/js/10.1e8468c9.js"><link rel="prefetch" href="/assets/js/11.7729bf5a.js"><link rel="prefetch" href="/assets/js/12.9557c0e3.js"><link rel="prefetch" href="/assets/js/13.5397dffc.js"><link rel="prefetch" href="/assets/js/14.d91a7549.js"><link rel="prefetch" href="/assets/js/15.12c66841.js"><link rel="prefetch" href="/assets/js/16.97c16572.js"><link rel="prefetch" href="/assets/js/17.bc6f6acd.js"><link rel="prefetch" href="/assets/js/18.a17ecee2.js"><link rel="prefetch" href="/assets/js/20.e493abb8.js"><link rel="prefetch" href="/assets/js/21.5189a833.js"><link rel="prefetch" href="/assets/js/22.6c980202.js"><link rel="prefetch" href="/assets/js/23.0a8ddf3a.js"><link rel="prefetch" href="/assets/js/24.a36362ba.js"><link rel="prefetch" href="/assets/js/25.9c8b53e2.js"><link rel="prefetch" href="/assets/js/26.69c456d6.js"><link rel="prefetch" href="/assets/js/27.e2bbe101.js"><link rel="prefetch" href="/assets/js/28.1e8db581.js"><link rel="prefetch" href="/assets/js/29.7f55762b.js"><link rel="prefetch" href="/assets/js/30.2a156191.js"><link rel="prefetch" href="/assets/js/31.8b7de805.js"><link rel="prefetch" href="/assets/js/32.b3f5d029.js"><link rel="prefetch" href="/assets/js/33.08ea4771.js"><link rel="prefetch" href="/assets/js/34.061543c8.js"><link rel="prefetch" href="/assets/js/35.5d582650.js"><link rel="prefetch" href="/assets/js/36.033b520c.js"><link rel="prefetch" href="/assets/js/37.d2585658.js"><link rel="prefetch" href="/assets/js/38.075aa62d.js"><link rel="prefetch" href="/assets/js/39.ccfbc284.js"><link rel="prefetch" href="/assets/js/4.705d9b2d.js"><link rel="prefetch" href="/assets/js/40.f60e24ed.js"><link rel="prefetch" href="/assets/js/41.7629259b.js"><link rel="prefetch" href="/assets/js/42.ad66b4b5.js"><link rel="prefetch" href="/assets/js/43.9a95bcbb.js"><link rel="prefetch" href="/assets/js/44.44e2e197.js"><link rel="prefetch" href="/assets/js/45.5687f71b.js"><link rel="prefetch" href="/assets/js/46.7312795e.js"><link rel="prefetch" href="/assets/js/5.0b489da2.js"><link rel="prefetch" href="/assets/js/6.bce4681f.js"><link rel="prefetch" href="/assets/js/7.3309610d.js"><link rel="prefetch" href="/assets/js/8.412f9bc6.js"><link rel="prefetch" href="/assets/js/9.25944bc3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e853742c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>zstblog</h3> <p class="description" data-v-59e6cb88>技术分享</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>zstaoer</span>
+          
+        <!---->
+        2023
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="zstblog" class="logo"> <span class="site-name">zstblog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/MySql/" class="nav-link"><i class="undefined"></i>
+  MySql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Article/" class="nav-link"><i class="undefined"></i>
+  Article
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MybatisPlus/" class="nav-link"><i class="undefined"></i>
+  MybatisPlus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/EasyExcel/" class="nav-link"><i class="undefined"></i>
+  EasyExcel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/springboot/" class="nav-link"><i class="undefined"></i>
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面经/" class="nav-link"><i class="undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      vue3
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/article/v3/20230911.html" class="nav-link"><i class="undefined"></i>
+  常用指令
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/v3/202309111620.html" class="nav-link"><i class="undefined"></i>
+  计算属性 &amp; 侦听器 &amp; 样式绑定 &amp; 模板引用
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/v3/202309111638.html" class="nav-link"><i class="undefined"></i>
+  Vue3 基础 – Vite &amp; 组件基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JavaScript
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230912-Map.html" class="nav-link"><i class="undefined"></i>
+  Map
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230912-Set.html" class="nav-link"><i class="undefined"></i>
+  Set
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-List.html" class="nav-link"><i class="undefined"></i>
+  List
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-bool.html" class="nav-link"><i class="undefined"></i>
+  布尔
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-num.html" class="nav-link"><i class="undefined"></i>
+  数字类型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-string.html" class="nav-link"><i class="undefined"></i>
+  字符串
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="undefined"></i>
+  java面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/redis.html" class="nav-link"><i class="undefined"></i>
+  Redis面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/mq.html" class="nav-link"><i class="undefined"></i>
+  MQ面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/SpringBoot-SpringCloud.html" class="nav-link"><i class="undefined"></i>
+  SpringBoot&amp;SpringCloud面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/ssm.html" class="nav-link"><i class="undefined"></i>
+  ssm面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/mysql.html" class="nav-link"><i class="undefined"></i>
+  MySql面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/Transactional.html" class="nav-link"><i class="undefined"></i>
+  事务控制
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/avatar1.jpg" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    zstaoer
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>35</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>26</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/MySql/" class="nav-link"><i class="undefined"></i>
+  MySql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Article/" class="nav-link"><i class="undefined"></i>
+  Article
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MybatisPlus/" class="nav-link"><i class="undefined"></i>
+  MybatisPlus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/EasyExcel/" class="nav-link"><i class="undefined"></i>
+  EasyExcel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/springboot/" class="nav-link"><i class="undefined"></i>
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面经/" class="nav-link"><i class="undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      vue3
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/article/v3/20230911.html" class="nav-link"><i class="undefined"></i>
+  常用指令
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/v3/202309111620.html" class="nav-link"><i class="undefined"></i>
+  计算属性 &amp; 侦听器 &amp; 样式绑定 &amp; 模板引用
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/v3/202309111638.html" class="nav-link"><i class="undefined"></i>
+  Vue3 基础 – Vite &amp; 组件基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JavaScript
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230912-Map.html" class="nav-link"><i class="undefined"></i>
+  Map
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230912-Set.html" class="nav-link"><i class="undefined"></i>
+  Set
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-List.html" class="nav-link"><i class="undefined"></i>
+  List
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-bool.html" class="nav-link"><i class="undefined"></i>
+  布尔
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-num.html" class="nav-link"><i class="undefined"></i>
+  数字类型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/article/js01/20230913-string.html" class="nav-link"><i class="undefined"></i>
+  字符串
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="undefined"></i>
+  java面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/redis.html" class="nav-link"><i class="undefined"></i>
+  Redis面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/mq.html" class="nav-link"><i class="undefined"></i>
+  MQ面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/SpringBoot-SpringCloud.html" class="nav-link"><i class="undefined"></i>
+  SpringBoot&amp;SpringCloud面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/ssm.html" class="nav-link"><i class="undefined"></i>
+  ssm面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/mysql.html" class="nav-link"><i class="undefined"></i>
+  MySql面经
+</a></li><li class="dropdown-item"><!----> <a href="/docs/theme-reco/Transactional.html" class="nav-link"><i class="undefined"></i>
+  事务控制
+</a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>Springboot实现MySql百万级数据导出避免OOM</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>zstaoer</span>
+          
+        <!---->
+        2023
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">Springboot实现MySql百万级数据导出避免OOM</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>zstaoer</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>7/10/2023</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>springboot</span><span class="tag-item" data-v-8a445198>MySql</span></i></div></div> <div class="theme-reco-content content__default"><div class="custom-block tip"><p class="title"></p><p>ORM使用Mybatis</p></div> <h2 id="mybatis实现百万级数据导出"><a href="#mybatis实现百万级数据导出" class="header-anchor">#</a> MyBatis实现百万级数据导出</h2> <p>MyBatis实现逐条获取数据，必须要自定义<code>ResultHandler</code>，然后在mapper.xml文件中，对应的select语句中添加<code>fetchSize=&quot;-2147483648&quot;</code>。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DownloadProcessor</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">;</span>
+
+  <span class="token keyword">public</span> <span class="token class-name">DownloadProcessor</span><span class="token punctuation">(</span><span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>response <span class="token operator">=</span> response<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> fileName <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;.csv&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">addHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;application/csv&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">addHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Content-Disposition&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;attachment; filename=&quot;</span><span class="token operator">+</span>fileName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">&quot;UTF-8&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">&gt;</span></span> <span class="token keyword">void</span> <span class="token function">processData</span><span class="token punctuation">(</span><span class="token class-name">E</span> record<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      response<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>record<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">*</span><span class="token comment">//如果是要写入csv,需要重写toString,属性通过&quot;,&quot;分割*</span>
+      response<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>然后通过实现<code>org.apache.ibatis.session.ResultHandler</code>，自定义我们的<code>ResultHandler</code>，它用于获取java对象，然后传递给上面的<code>DownloadProcessor</code>处理类进行写文件操作：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomResultHandler</span> <span class="token keyword">implements</span> <span class="token class-name">ResultHandler</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">DownloadProcessor</span> downloadProcessor<span class="token punctuation">;</span>
+     
+    <span class="token keyword">public</span> <span class="token class-name">CustomResultHandler</span><span class="token punctuation">(</span>
+            <span class="token class-name">DownloadProcessor</span> downloadProcessor<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>downloadProcessor <span class="token operator">=</span> downloadProcessor<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleResult</span><span class="token punctuation">(</span><span class="token class-name">ResultContext</span> resultContext<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Authors</span> authors <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Authors</span><span class="token punctuation">)</span>resultContext<span class="token punctuation">.</span><span class="token function">getResultObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        downloadProcessor<span class="token punctuation">.</span><span class="token function">processData</span><span class="token punctuation">(</span>authors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>实体类</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Authors</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">Integer</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> firstName<span class="token punctuation">;</span>
+     
+    <span class="token keyword">private</span> <span class="token class-name">String</span> lastName<span class="token punctuation">;</span>
+     
+    <span class="token keyword">private</span> <span class="token class-name">String</span> email<span class="token punctuation">;</span>
+     
+    <span class="token keyword">private</span> <span class="token class-name">Date</span> birthdate<span class="token punctuation">;</span>
+     
+    <span class="token keyword">private</span> <span class="token class-name">Date</span> added<span class="token punctuation">;</span>
+     
+    <span class="token keyword">public</span> <span class="token class-name">Integer</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setId</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getFirstName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> firstName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setFirstName</span><span class="token punctuation">(</span><span class="token class-name">String</span> firstName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>firstName <span class="token operator">=</span> firstName <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> firstName<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getLastName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> lastName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setLastName</span><span class="token punctuation">(</span><span class="token class-name">String</span> lastName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>lastName <span class="token operator">=</span> lastName <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> lastName<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getEmail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> email<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token class-name">String</span> email<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>email <span class="token operator">=</span> email <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> email<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token keyword">public</span> <span class="token class-name">Date</span> <span class="token function">getBirthdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> birthdate<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBirthdate</span><span class="token punctuation">(</span><span class="token class-name">Date</span> birthdate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>birthdate <span class="token operator">=</span> birthdate<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token keyword">public</span> <span class="token class-name">Date</span> <span class="token function">getAdded</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> added<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAdded</span><span class="token punctuation">(</span><span class="token class-name">Date</span> added<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>added <span class="token operator">=</span> added<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">+</span> <span class="token string">&quot;,&quot;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>firstName <span class="token operator">+</span> <span class="token string">&quot;,&quot;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lastName <span class="token operator">+</span> <span class="token string">&quot;,&quot;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>email <span class="token operator">+</span> <span class="token string">&quot;,&quot;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>birthdate <span class="token operator">+</span> <span class="token string">&quot;,&quot;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>added<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br></div></div><p>mapper接口</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">AuthorsMapper</span> <span class="token punctuation">{</span>
+   <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Authors</span><span class="token punctuation">&gt;</span></span> <span class="token function">selectByExample</span><span class="token punctuation">(</span><span class="token class-name">AuthorsExample</span> example<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+   <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Authors</span><span class="token punctuation">&gt;</span></span> <span class="token function">streamByExample</span><span class="token punctuation">(</span><span class="token class-name">AuthorsExample</span> example<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//以stream形式从mysql获取数据</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>Mapper xml文件核心片段，以下两条select的唯一差异就是在stream获取数据的方式中多了一条属性：<code>fetchSize=&quot;-2147483648&quot;</code></p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">&quot;selectByExample&quot;</span> parameterType<span class="token operator">=</span><span class="token string">&quot;com.alphathur.mysqlstreamingexport.domain.AuthorsExample&quot;</span> resultMap<span class="token operator">=</span><span class="token string">&quot;BaseResultMap&quot;</span><span class="token operator">&gt;</span>
+    select
+    <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">&quot;distinct&quot;</span><span class="token operator">&gt;</span>
+      distinct
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">&gt;</span>
+    <span class="token char">'false'</span> as <span class="token constant">QUERYID</span><span class="token punctuation">,</span>
+    <span class="token operator">&lt;</span>include refid<span class="token operator">=</span><span class="token string">&quot;Base_Column_List&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    from authors
+    <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">&quot;_parameter != null&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>include refid<span class="token operator">=</span><span class="token string">&quot;Example_Where_Clause&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">&quot;orderByClause != null&quot;</span><span class="token operator">&gt;</span>
+      order by $<span class="token punctuation">{</span>orderByClause<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">&quot;streamByExample&quot;</span> fetchSize<span class="token operator">=</span><span class="token string">&quot;-2147483648&quot;</span> parameterType<span class="token operator">=</span><span class="token string">&quot;com.alphathur.mysqlstreamingexport.domain.AuthorsExample&quot;</span> resultMap<span class="token operator">=</span><span class="token string">&quot;BaseResultMap&quot;</span><span class="token operator">&gt;</span>
+    select
+    <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">&quot;distinct&quot;</span><span class="token operator">&gt;</span>
+      distinct
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">&gt;</span>
+    <span class="token char">'false'</span> as <span class="token constant">QUERYID</span><span class="token punctuation">,</span>
+    <span class="token operator">&lt;</span>include refid<span class="token operator">=</span><span class="token string">&quot;Base_Column_List&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    from authors
+    <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">&quot;_parameter != null&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>include refid<span class="token operator">=</span><span class="token string">&quot;Example_Where_Clause&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">&quot;orderByClause != null&quot;</span><span class="token operator">&gt;</span>
+      order by $<span class="token punctuation">{</span>orderByClause<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>获取数据的核心service如下，由于只做个简单演示，就懒得写成接口了。其中 <code>streamDownload</code> 方法即为stream取数据写文件的实现，它将以很低的内存占用从MySQL获取数据；此外还提供<code>traditionDownload</code>方法，它是一种传统的下载方式，批量获取全部数据，然后将每个对象写入文件。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AuthorsService</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">SqlSessionTemplate</span> sqlSessionTemplate<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">AuthorsMapper</span> authorsMapper<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">AuthorsService</span><span class="token punctuation">(</span><span class="token class-name">SqlSessionTemplate</span> sqlSessionTemplate<span class="token punctuation">,</span> <span class="token class-name">AuthorsMapper</span> authorsMapper<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>sqlSessionTemplate <span class="token operator">=</span> sqlSessionTemplate<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>authorsMapper <span class="token operator">=</span> authorsMapper<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * stream读数据写文件方式
+     * @param httpServletResponse
+     * @throws IOException
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">streamDownload</span><span class="token punctuation">(</span><span class="token class-name">HttpServletResponse</span> httpServletResponse<span class="token punctuation">)</span>
+            <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token class-name">AuthorsExample</span> authorsExample <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AuthorsExample</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        authorsExample<span class="token punctuation">.</span><span class="token function">createCriteria</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> param <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        param<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;oredCriteria&quot;</span><span class="token punctuation">,</span> authorsExample<span class="token punctuation">.</span><span class="token function">getOredCriteria</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        param<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;orderByClause&quot;</span><span class="token punctuation">,</span> authorsExample<span class="token punctuation">.</span><span class="token function">getOrderByClause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">CustomResultHandler</span> customResultHandler <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CustomResultHandler</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">DownloadProcessor</span> <span class="token punctuation">(</span>httpServletResponse<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sqlSessionTemplate<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span>
+                <span class="token string">&quot;com.alphathur.mysqlstreamingexport.mapper.AuthorsMapper.streamByExample&quot;</span><span class="token punctuation">,</span> param<span class="token punctuation">,</span> customResultHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        httpServletResponse<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        httpServletResponse<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 传统下载方式
+     * @param httpServletResponse
+     * @throws IOException
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">traditionDownload</span><span class="token punctuation">(</span><span class="token class-name">HttpServletResponse</span> httpServletResponse<span class="token punctuation">)</span>
+            <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token class-name">AuthorsExample</span> authorsExample <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AuthorsExample</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        authorsExample<span class="token punctuation">.</span><span class="token function">createCriteria</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Authors</span><span class="token punctuation">&gt;</span></span> authors <span class="token operator">=</span> authorsMapper<span class="token punctuation">.</span>selectByExample <span class="token punctuation">(</span>authorsExample<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">DownloadProcessor</span> downloadProcessor <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DownloadProcessor</span> <span class="token punctuation">(</span>httpServletResponse<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        authors<span class="token punctuation">.</span>forEach <span class="token punctuation">(</span>downloadProcessor<span class="token operator">::</span><span class="token function">processData</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        httpServletResponse<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        httpServletResponse<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br></div></div><p>下载的入口controller：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">&quot;download&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">AuthorsService</span> authorsService<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">HelloController</span><span class="token punctuation">(</span><span class="token class-name">AuthorsService</span> authorsService<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>authorsService <span class="token operator">=</span> authorsService<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">&quot;streamDownload&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">streamDownload</span><span class="token punctuation">(</span><span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">)</span>
+            <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        authorsService<span class="token punctuation">.</span><span class="token function">streamDownload</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">&quot;traditionDownload&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">traditionDownload</span><span class="token punctuation">(</span><span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">)</span>
+            <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        authorsService<span class="token punctuation">.</span>traditionDownload <span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>   
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>实体类对应的表结构创建语句：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>CREATE TABLE <span class="token variable"><span class="token variable">`</span>authors<span class="token variable">`</span></span> <span class="token punctuation">(</span>
+  <span class="token variable"><span class="token variable">`</span><span class="token function">id</span><span class="token variable">`</span></span> int<span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> NOT NULL AUTO_INCREMENT,
+  <span class="token variable"><span class="token variable">`</span>first_name<span class="token variable">`</span></span> varchar<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  <span class="token variable"><span class="token variable">`</span>last_name<span class="token variable">`</span></span> varchar<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  <span class="token variable"><span class="token variable">`</span>email<span class="token variable">`</span></span> varchar<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  <span class="token variable"><span class="token variable">`</span>birthdate<span class="token variable">`</span></span> <span class="token function">date</span> NOT NULL,
+  <span class="token variable"><span class="token variable">`</span>added<span class="token variable">`</span></span> timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY <span class="token punctuation">(</span><span class="token variable"><span class="token variable">`</span><span class="token function">id</span><span class="token variable">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token assign-left variable">ENGINE</span><span class="token operator">=</span>InnoDB <span class="token assign-left variable">AUTO_INCREMENT</span><span class="token operator">=</span><span class="token number">10095</span> DEFAULT <span class="token assign-left variable">CHARSET</span><span class="token operator">=</span>utf8 <span class="token assign-left variable">COLLATE</span><span class="token operator">=</span>utf8_unicode_ci<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>这里有个问题：如何短时间内创建大批量测试数据到MySQL呢？一种方式是使用<code>存储过程 + 大杀器 select insert 语句</code>！不太懂？</p> <p>没关系，且看我另一篇文章 MySQL如何生成大批量测试数据 你就会明白了。如果你懒得看，我这里已经将生成的270多万条测试数据上传到网盘，你直接下载然后通过navicat导入就好了。</p> <p>有了测试数据，我们就可以直接测试了。先启动项目，然后打开jdk bin目录下的 <code>jconsole.exe</code></p> <p>首先我们测试传统方式下载文件的内存占用，直接浏览器访问：<code>http://localhost:8080/download/traditionDownload</code>。</p> <p>可以看出，下载开始前内存占用大概为几十M，下载开始后内存占用急速上升，峰值达到接近2.5G，即使是下载完成，堆内存也维持一个较高的占用，这实在是太可怕了，如果生产环境敢这么搞，不出意外肯定内存溢出。</p> <p><img src="/assets/img/wx1.cd93399a.png" alt=""></p> <p>接着我们测试stream方式文件下载的内存占用，浏览器访问：<code>http://localhost:8080/download/streamDownload</code>，当下载开始后，内存占用也会有一个明显的上升，但是峰值才到500M。对比于上面的方式，内存占用率足足降低了80%！怎么样，兴奋了吗！</p> <p><img src="/assets/img/wx2.195904ac.png" alt=""></p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/11/2023, 3:49:09 AM</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:0;" data-v-b57cc07c data-v-7dd95ae2></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.9553e677.js" defer></script><script src="/assets/js/3.979a681a.js" defer></script><script src="/assets/js/1.9975a5e7.js" defer></script><script src="/assets/js/19.8f631be8.js" defer></script>
+  </body>
+</html>
